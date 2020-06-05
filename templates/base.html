@@ -1,0 +1,76 @@
+<html>
+<head>
+    <title>
+        szachy
+    </title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" type="image/png" href="/static/logos/main/favico.png"/>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='./bootstrap/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="{{url_for('static', filename='./bootstrap/js/bootstrap.js')}}"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-dark" id ="top_nav">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavTop" aria-controls="navbarNavTop" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavTop">
+        <ul class="navbar-nav" id="top_nav_ul">
+
+            <li class="nav-item">
+                <a class="nav-link" href=/blog>Blog</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/contact">Kontakt</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/about">O nas</a>
+            </li>
+
+        </ul>
+        <ul class="navbar-nav ml-auto nav-flex-icons">
+            <li class="nav-item">
+                <a href="/" target="_blank" class="fa fa-facebook"></a>
+            </li>
+            <li class="nav-item">
+                <a href="/" target="_blank" class="fa fa-twitter"></a>
+            </li>
+            <li class="nav-item">
+                <a href="/" target="_blank" class="fa fa-envelope"></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+<div class="container" id="content">
+    {% block content %}
+    {% endblock %}
+</div>
+
+
+<footer class="footer">
+    <div class="container">
+        <div class="boxes-top clearfix">
+            <div class="communications">
+                <div class="links">
+                    <a href="/" target="_blank" class="fa fa-facebook"></a>
+                    <a href="/" target="_blank" class="fa fa-twitter"></a>
+                    <a href="/" target="_blank" class="fa fa-envelope"></a>
+                </div>
+            </div>
+            <div class="footer_links">
+            </div>
+        </div>
+    </div>
+    <div class="center-footer">
+    </div>
+</footer>
+</body>
+</html>
