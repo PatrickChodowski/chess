@@ -20,7 +20,7 @@ table.chessboard {
     border-collapse: collapse; /* */
 }
 td.chessboard {
-    width: 70px; height: 70px;
+    width: 100px; height: 100px;
     border: 2px solid #333; /* */
 }
 tr.chessboard:nth-child(odd) td.chessboard:nth-child(even),
