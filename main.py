@@ -11,12 +11,18 @@ app.config['SECRET_KEY'] = SECRET_KEY
 app.config["FLASK_DEBUG"] = 0
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
+#https://www.w3schools.com/js/js_htmldom_document.asp
 
 
 @app.route('/', methods=['GET'])
 @app.route('/index', methods=['GET'])
 def index():
     return render_template('chess_page.html')
+
+# how to store all curent positions?????
+
+
+
 
 
 
