@@ -40,3 +40,6 @@ tr.chessboard:nth-child(even) td.chessboard:nth-child(odd) {
     draggable: true;
     ondragstart: "drag(event)";
 }
+
+.pawn {
+}

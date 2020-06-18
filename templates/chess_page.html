@@ -8,33 +8,6 @@
     <meta charset="UTF-8">
     <title>chess vis</title>
 
-    <script>
-function allowDrop(ev) {
-  ev.preventDefault();
-}
-
-function drag(ev) {
-  ev.dataTransfer.setData("text", ev.target.id);
-}
-
-function drop(ev) {
-  ev.preventDefault();
-  var data = ev.dataTransfer.getData("text");
-  ev.target.appendChild(document.getElementById(data));
-  var content =  document.getElementById("log_window").innerHTML + '\r\n' + data + ' -> ' + ev.target.id;
-  document.getElementById("log_window").innerHTML = content;
-
-
-}
-
-function show_current_position() {
-
-}
-
-
-
-</script>
-
 </head>
 <body>
 
@@ -58,14 +31,14 @@ function show_current_position() {
                         <td class="chessboard" id="h8" ondrop="drop(event)" ondragover="allowDrop(event)">H8</td>
                     </tr>
                     <tr class="chessboard">
-                        <td class="chessboard" id="a7" ondrop="drop(event)" ondragover="allowDrop(event)">A7 <img id="p_b_a7" src="static/figures/pawn_black.png" ondragstart="drag(event)" class="figure"></td>
-                        <td class="chessboard" id="b7" ondrop="drop(event)" ondragover="allowDrop(event)">B7 <img id="p_b_b7" src="static/figures/pawn_black.png" ondragstart="drag(event)" class="figure"></td>
-                        <td class="chessboard" id="c7" ondrop="drop(event)" ondragover="allowDrop(event)">C7 <img id="p_b_c7" src="static/figures/pawn_black.png" ondragstart="drag(event)" class="figure"></td>
-                        <td class="chessboard" id="d7" ondrop="drop(event)" ondragover="allowDrop(event)">D7 <img id="p_b_d7" src="static/figures/pawn_black.png" ondragstart="drag(event)" class="figure"></td>
-                        <td class="chessboard" id="e7" ondrop="drop(event)" ondragover="allowDrop(event)">E7 <img id="p_b_e7" src="static/figures/pawn_black.png" ondragstart="drag(event)" class="figure"></td>
-                        <td class="chessboard" id="f7" ondrop="drop(event)" ondragover="allowDrop(event)">F7 <img id="p_b_f7" src="static/figures/pawn_black.png" ondragstart="drag(event)" class="figure"></td>
-                        <td class="chessboard" id="g7" ondrop="drop(event)" ondragover="allowDrop(event)">G7 <img id="p_b_g7" src="static/figures/pawn_black.png" ondragstart="drag(event)" class="figure"></td>
-                        <td class="chessboard" id="h7" ondrop="drop(event)" ondragover="allowDrop(event)">H7 <img id="p_b_h7" src="static/figures/pawn_black.png" ondragstart="drag(event)" class="figure"></td>
+                        <td class="chessboard" id="a7" ondrop="drop(event)" ondragover="allowDrop(event)">A7 <img id="p_b_a7" src="static/figures/pawn_black.png" ondragstart="drag(event)" class="figure pawn"></td>
+                        <td class="chessboard" id="b7" ondrop="drop(event)" ondragover="allowDrop(event)">B7 <img id="p_b_b7" src="static/figures/pawn_black.png" ondragstart="drag(event)" class="figure pawn"></td>
+                        <td class="chessboard" id="c7" ondrop="drop(event)" ondragover="allowDrop(event)">C7 <img id="p_b_c7" src="static/figures/pawn_black.png" ondragstart="drag(event)" class="figure pawn"></td>
+                        <td class="chessboard" id="d7" ondrop="drop(event)" ondragover="allowDrop(event)">D7 <img id="p_b_d7" src="static/figures/pawn_black.png" ondragstart="drag(event)" class="figure pawn"></td>
+                        <td class="chessboard" id="e7" ondrop="drop(event)" ondragover="allowDrop(event)">E7 <img id="p_b_e7" src="static/figures/pawn_black.png" ondragstart="drag(event)" class="figure pawn"></td>
+                        <td class="chessboard" id="f7" ondrop="drop(event)" ondragover="allowDrop(event)">F7 <img id="p_b_f7" src="static/figures/pawn_black.png" ondragstart="drag(event)" class="figure pawn"></td>
+                        <td class="chessboard" id="g7" ondrop="drop(event)" ondragover="allowDrop(event)">G7 <img id="p_b_g7" src="static/figures/pawn_black.png" ondragstart="drag(event)" class="figure pawn"></td>
+                        <td class="chessboard" id="h7" ondrop="drop(event)" ondragover="allowDrop(event)">H7 <img id="p_b_h7" src="static/figures/pawn_black.png" ondragstart="drag(event)" class="figure pawn"></td>
                     </tr>
                     <tr class="chessboard">
                         <td class="chessboard" id="a6" ondrop="drop(event)" ondragover="allowDrop(event)">A6</td>
@@ -108,14 +81,14 @@ function show_current_position() {
                         <td class="chessboard" id="h3" ondrop="drop(event)" ondragover="allowDrop(event)">H3</td>
                     </tr>
                     <tr class="chessboard">
-                        <td class="chessboard" id="a2" ondrop="drop(event)" ondragover="allowDrop(event)">A2 <img id="p_w_a2" src="static/figures/pawn_white.png" ondragstart="drag(event)"  class="figure"></td>
-                        <td class="chessboard" id="b2" ondrop="drop(event)" ondragover="allowDrop(event)">B2 <img id="p_w_b2" src="static/figures/pawn_white.png" ondragstart="drag(event)"  class="figure"></td>
-                        <td class="chessboard" id="c2" ondrop="drop(event)" ondragover="allowDrop(event)">C2 <img id="p_w_c2" src="static/figures/pawn_white.png" ondragstart="drag(event)"  class="figure"></td>
-                        <td class="chessboard" id="d2" ondrop="drop(event)" ondragover="allowDrop(event)">D2 <img id="p_w_d2" src="static/figures/pawn_white.png" ondragstart="drag(event)"  class="figure"></td>
-                        <td class="chessboard" id="e2" ondrop="drop(event)" ondragover="allowDrop(event)">E2 <img id="p_w_e2" src="static/figures/pawn_white.png" ondragstart="drag(event)"  class="figure"></td>
-                        <td class="chessboard" id="f2" ondrop="drop(event)" ondragover="allowDrop(event)">F2 <img id="p_w_f2" src="static/figures/pawn_white.png" ondragstart="drag(event)"  class="figure"></td>
-                        <td class="chessboard" id="g2" ondrop="drop(event)" ondragover="allowDrop(event)">G2 <img id="p_w_g2" src="static/figures/pawn_white.png" ondragstart="drag(event)"  class="figure"></td>
-                        <td class="chessboard" id="h2" ondrop="drop(event)" ondragover="allowDrop(event)">H2 <img id="p_w_h2" src="static/figures/pawn_white.png" ondragstart="drag(event)"  class="figure"></td>
+                        <td class="chessboard" id="a2" ondrop="drop(event)" ondragover="allowDrop(event)">A2 <img id="p_w_a2" src="static/figures/pawn_white.png" ondragstart="drag(event)"  class="figure pawn"></td>
+                        <td class="chessboard" id="b2" ondrop="drop(event)" ondragover="allowDrop(event)">B2 <img id="p_w_b2" src="static/figures/pawn_white.png" ondragstart="drag(event)"  class="figure pawn"></td>
+                        <td class="chessboard" id="c2" ondrop="drop(event)" ondragover="allowDrop(event)">C2 <img id="p_w_c2" src="static/figures/pawn_white.png" ondragstart="drag(event)"  class="figure pawn"></td>
+                        <td class="chessboard" id="d2" ondrop="drop(event)" ondragover="allowDrop(event)">D2 <img id="p_w_d2" src="static/figures/pawn_white.png" ondragstart="drag(event)"  class="figure pawn"></td>
+                        <td class="chessboard" id="e2" ondrop="drop(event)" ondragover="allowDrop(event)">E2 <img id="p_w_e2" src="static/figures/pawn_white.png" ondragstart="drag(event)"  class="figure pawn"></td>
+                        <td class="chessboard" id="f2" ondrop="drop(event)" ondragover="allowDrop(event)">F2 <img id="p_w_f2" src="static/figures/pawn_white.png" ondragstart="drag(event)"  class="figure pawn"></td>
+                        <td class="chessboard" id="g2" ondrop="drop(event)" ondragover="allowDrop(event)">G2 <img id="p_w_g2" src="static/figures/pawn_white.png" ondragstart="drag(event)"  class="figure pawn"></td>
+                        <td class="chessboard" id="h2" ondrop="drop(event)" ondragover="allowDrop(event)">H2 <img id="p_w_h2" src="static/figures/pawn_white.png" ondragstart="drag(event)"  class="figure pawn"></td>
                     </tr>
                     <tr class="chessboard">
                         <td class="chessboard" id="a1" ondrop="drop(event)" ondragover="allowDrop(event)">A1</td>
