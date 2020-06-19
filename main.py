@@ -21,10 +21,5 @@ def index():
 
 # how to store all curent positions?????
 
-
-
-
-
-
 if __name__ == '__main__':
     app.run(port=5002)
