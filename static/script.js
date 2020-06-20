@@ -13,14 +13,28 @@ $("document").ready(function(){
     }
 
     function highlight_ids(arr){
-        jQuery.each( arr, function( i, val ) {
-             $( "#" + val ).css("background-color", "yellow");
-        });
+        //jQuery.each( arr, function( i, val ) {
+        //     $( "#" + val ).css("background-color", "yellow");
+        //});
+        console.log('highlighted')
+        jQuery.each(arr, function(i , val) {
+            $( "#" + val ).addClass('clicked_square')
+        })
      }
 ///woohooo
      function allow_drop(arr){
              jQuery.each( arr, function( i, val ) {
              $( "#" + val ).attr("ondragover", "allowDrop(event)");
+             $( "#" + val ).attr("ondrop", "drop(event)");
+        });
+     }
+
+     function reset_impact(arr){
+              console.log('resetting impact')
+             jQuery.each( arr, function( i, val ) {
+              $( "#" + val ).attr("ondragover", "return false;");
+              $( "#" + val ).attr("ondrop", "return false;");
+
         });
      }
 
@@ -49,11 +63,11 @@ $("document").ready(function(){
 
 
         }
-        highlight_ids(possible_moves)
-        allow_drop(possible_moves)
+        //highlight_ids(possible_moves)
+        //allow_drop(possible_moves)
+        return possible_moves
 
     }
-
 
     function return_figure_info() {
         var classList = document.getElementById(this.id).className.split(/\s+/);
@@ -68,7 +82,7 @@ $("document").ready(function(){
         var figure_color = classList[1]
 
         if (figure_type === 'pawn'){
-            pawn_legal_moves(figure_color, figure_position)
+            var possible_moves = pawn_legal_moves(figure_color, figure_position)
         } else if (figure_type === 'bishop') {
             console.log('checking bishops legal moves')
         } else if (figure_type === 'knight') {
@@ -80,17 +94,25 @@ $("document").ready(function(){
         } else if (figure_type === 'king') {
             console.log('checking kings legal moves')
         }
+
+        if (event.type === 'click'){
+            highlight_ids(possible_moves)
+        } else if (event.type === 'drag'){
+            allow_drop(possible_moves)
+        } else if (event.type === 'dragend'){
+            reset_impact(possible_moves)
+        }
     }
-
+    console.log(event)
     // events + functions
-    $(".figure").on("click", return_figure_info)
-
-
-
-
+    $(".figure").on(
+        {click: return_figure_info,
+         drag: return_figure_info,
+         dragend: return_figure_info
+        }
+    )
 
     function list_figures_on_board(){
-
         var all_figures = $( ".chessboard" ).find( "figure" );
         console.log(all_figures)
 
@@ -99,10 +121,7 @@ $("document").ready(function(){
 })
 
 
-// how to allowDrop only on the selected ids
 
-//only for selected fields:
-//ondragover=allowDrop(event)
 
 
 

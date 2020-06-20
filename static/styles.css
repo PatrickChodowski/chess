@@ -41,5 +41,8 @@ tr.chessboard:nth-child(even) td.chessboard:nth-child(odd) {
     ondragstart: "drag(event)";
 }
 
-.pawn {
+.clicked_square {
+    border-style: dashed;
+    border-color: red;
+    background-color: limegreen;
 }
